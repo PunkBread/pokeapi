@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Pokemon App</title>
+</head>
+<body>
+  <div class="container">
+    <h1>Pokemon App</h1>
+
+    <!-- Primer endpoint (GET) -->
+    <div>
+      <h2>Lista de Pokémon</h2>
+      <form id="getPokemonsForm">
+        <label for="limit">Limite:</label>
+        <input type="number" id="limit" name="limit" min="1" value="">
+        
+        <label for="page">Paginas:</label>
+        <input type="number" id="page" name="page" min="1" value="1">
+
+        <label for="search">Search:</label>
+        <input type="text" id="search" name="search" value="">
+
+        <button type="button" onclick="getPokemons()">Get Pokemon List</button>
+      </form>
+      <div id="searching" style="display: none;">
+          <img src="pokeball-spin-pokeball.gif" alt="Animated GIF" style="width: 100px;">
+      </div>
+      <ul id="pokemonList"></ul>
+    </div>
+
+    <!-- Segundo endpoint (POST) -->
+    <div>
+      <h2>Generate Pokemon PDF</h2>
+      <form id="generatePdfForm">
+        <label for="pokemonName">Pokemon Name:</label>
+        <input type="text" id="pokemonName" name="pokemonName" required>
+        <button type="button" onclick="generatePdf()">Generate PDF</button>
+      </form>
+      <a id="pdfLink" style="display: none;" download="pokemon_info.pdf">Download PDF</a>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+  <!-- Include jsPDF library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+
+</body>
+</html>

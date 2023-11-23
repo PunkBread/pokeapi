@@ -1,0 +1,1 @@
+Para ejecutar este código en JavaScript, no necesitas instalar ningún paquete de npm adicional, ya que el código está destinado a ejecutarse en el navegador web.
